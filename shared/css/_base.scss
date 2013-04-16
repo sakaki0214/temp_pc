@@ -89,7 +89,7 @@ address, caption, cite, code, dfn, em, strong, th, var {
 body {
 	background: #fff;
 	color: #333;
-	font-family: "メイリオ", "Meiryo", verdana, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", Sans-Serif;
+	font-family: 'Hiragino Kaku Gothic Pro',Meiryo,'MS PGothic',sans-serif;
 	font-size:14px;
 	line-height: 1.5;
 }
@@ -102,6 +102,11 @@ h1, h2, h3, h4, h5, h6 {
 p, li, dt, dd {
 	line-height:1.5;
 }
-input, textarea {
+input,
+textarea {
+	font-family: 'Hiragino Kaku Gothic Pro',Meiryo,'MS PGothic',sans-serif;
+}
+* html input,
+* html textarea {
 	font-family:"ＭＳ Ｐゴシック", "MS PGothic", Osaka;
 }
