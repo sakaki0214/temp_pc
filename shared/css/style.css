@@ -428,12 +428,43 @@ input, textarea {
   width: 860px;
   margin: 0 auto;
   padding: 20px;
+  overflow: hidden;
+  *zoom: 1;
 }
 
 @media (max-width: 768px) {
   #mod_pageContents {
     width: auto;
     padding: 1px 15px;
+  }
+}
+#mod_pageMain {
+  background: #ccc;
+  float: left;
+  width: 645px;
+}
+
+@media (max-width: 768px) {
+  #mod_pageMain {
+    float: none;
+    width: 100%;
+    margin: 0 0 25px;
+  }
+}
+#mod_pageSide {
+  background: #ccc;
+  float: right;
+  width: 200px;
+}
+#mod_pageSide ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+@media (max-width: 768px) {
+  #mod_pageSide {
+    float: none;
+    width: 100%;
   }
 }
 #mod_pageFooter {
