@@ -399,30 +399,42 @@ input, textarea {
   font-family: "ＭＳ Ｐゴシック", "MS PGothic", Osaka;
 }
 
-#mod-pageHeader {
+#mod_pageHeader {
   background: #ccc;
   padding: 1px 15px;
 }
-#mod-pageHeader h1 {
+#mod_pageHeader h1 {
   font-size: 20px;
 }
 
-@media (max-width: 600px) {
-  #mod-pageHeader {
-    text-align: center;
-  }
-  #mod-pageHeader h1 {
+@media (max-width: 768px) {
+  #mod_pageHeader h1 {
     font-size: 18px;
   }
 }
-#mod-pageContents {
-  background: #ddd;
+#mod_pageHeaderInner {
   width: 900px;
   margin: 0 auto;
 }
 
-@media (max-width: 900px) {
-  padding: 0 15px;
+@media (max-width: 768px) {
+  #mod_pageHeaderInner {
+    text-align: center;
+    width: auto;
+  }
+}
+#mod_pageContents {
+  background: #ddd;
+  width: 860px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  #mod_pageContents {
+    width: auto;
+    padding: 1px 15px;
+  }
 }
 #mod_pageFooter {
   padding: 1px 15px;
@@ -434,8 +446,14 @@ input, textarea {
   color: #999;
 }
 
-@media (max-width: 900px) {
-  #mod_pageFooter {
+#mod_pageFooterInner {
+  width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  #mod_pageFooterInner {
+    width: auto;
     text-align: center;
   }
 }

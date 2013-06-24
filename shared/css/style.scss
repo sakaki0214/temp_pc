@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import "compass";
 @import "normalize";
-$break-small:600px;
+$break-small:768px;
 $break-medium:900px;
 /*----------------------------------
  * common
@@ -28,7 +28,7 @@ input, textarea {
 * html input, * html textarea {
   font-family: "ＭＳ Ｐゴシック", "MS PGothic", Osaka;
 }
-#mod-pageHeader {
+#mod_pageHeader {
   background:#ccc;
   padding:1px 15px;
   h1 {
@@ -36,20 +36,33 @@ input, textarea {
   }
 }
 @media(max-width:$break-small) {
-  #mod-pageHeader {
-    text-align:center;
+  #mod_pageHeader {
     h1 {
       font-size:18px;
     }
   }
 }
-#mod-pageContents {
-  background:#ddd;
+#mod_pageHeaderInner {
   width:900px;
   margin:0 auto;
 }
-@media(max-width:$break-medium) {
-  padding:0 15px;
+@media(max-width:$break-small) {
+  #mod_pageHeaderInner {
+    text-align:center;
+    width:auto;
+  }
+}
+#mod_pageContents {
+  background:#ddd;
+  width:860px;
+  margin:0 auto;
+  padding:20px;
+}
+@media(max-width:$break-small) {
+  #mod_pageContents {
+    width:auto;
+    padding:1px 15px;
+  }
 }
 #mod_pageFooter {
   padding:1px 15px;
@@ -60,12 +73,16 @@ input, textarea {
     color:#999;
   }
 }
-@media(max-width:$break-medium) {
-  #mod_pageFooter {
+#mod_pageFooterInner {
+  width:900px;
+  margin:0 auto;
+}
+@media(max-width:$break-small) {
+  #mod_pageFooterInner {
+    width:auto;
     text-align:center;
   }
 }
-
 /*----------------------------------
  * style
  *----------------------------------*/
