@@ -1,18 +1,24 @@
-# osx noise
 .DS_Store
-profile
+Thumb.db
+.sass-cache/
 
-# xcode noise
-build/*
-*.mode1
-*.mode1v3
-*.mode2v3
-*.perspective
-*.perspectivev3
-*.pbxuser
-*.xcworkspace
-xcuserdata
+*.aif
+*.mid
+*.midi
+*.mp3
+*.ra
+*.ram
+*.wav
 
-# svn & cvs
+*.avi
+*.f4v
+*.flv
+*.m4v
+*.mov
+*.mp4
+*.mpeg
+*.mpg
+*.rm
+*.wmv
+
 .svn
-CVS
