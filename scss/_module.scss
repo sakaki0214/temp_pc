@@ -88,3 +88,43 @@ $break-medium:900px;
     text-align:center;
   }
 }
+
+//
+// select box
+//
+
+.select-type1 {
+  span.customSelect {
+    font-size:14px;
+    color:#3f657b;
+    line-height: 33px;
+    height: 50 - 8px;
+    width: 200px;
+    margin:0 0 20px;
+    padding: 8px 0 0 10px;
+    background:image-url("bg_select1.png") no-repeat;
+  }
+  .customSelectInner {
+    width:160px !important;
+  }
+}
+.select-type2 {
+  span.customSelect {
+    font-size:14px;
+    color:#3f657b;
+    line-height: 33px;
+    height: 50 - 8px;
+    width: 300px;
+    margin:0 0 20px;
+    padding: 8px 0 0 10px;
+    background:image-url("bg_select2.png") no-repeat;
+  }
+  .customSelectInner {
+    width:260px !important;
+  }
+}
+.customSelectInner {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
