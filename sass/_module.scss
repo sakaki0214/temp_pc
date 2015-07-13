@@ -1,0 +1,130 @@
+$break-small:768px;
+$break-medium:900px;
+
+#mod_pageHeader {
+  background:#ccc;
+  padding:1px 15px;
+  h1 {
+    font-size:20px;
+  }
+}
+@media(max-width:$break-small) {
+  #mod_pageHeader {
+    h1 {
+      font-size:18px;
+    }
+  }
+}
+#mod_pageHeaderInner {
+  width:900px;
+  margin:0 auto;
+}
+@media(max-width:$break-small) {
+  #mod_pageHeaderInner {
+    text-align:center;
+    width:auto;
+  }
+}
+#mod_pageContents {
+  background:#ddd;
+  width:860px;
+  margin:0 auto;
+  padding:20px;
+  overflow:hidden;
+  *zoom:1;
+}
+@media(max-width:$break-small) {
+  #mod_pageContents {
+    width:auto;
+    padding:1px 15px;
+  }
+}
+#mod_pageMain {
+  background:#ccc;
+  float:left;
+  width:645px;
+}
+@media(max-width:$break-small) {
+  #mod_pageMain {
+    float:none;
+    width:100%;
+    margin:0 0 25px;
+  }
+}
+#mod_pageSide {
+  background:#ccc;
+  float:right;
+  width:200px;
+  #ad1 {
+  }
+  ul {
+    list-style-type:none;
+    padding-left:0;
+  }
+}
+@media(max-width:$break-small) {
+#mod_pageSide {
+    float:none;
+    width:100%;
+  }
+}
+
+#mod_pageFooter {
+  padding:1px 15px;
+  background:#eee;
+  color:#000;
+  small {
+    font-size:80%;
+    color:#999;
+  }
+}
+#mod_pageFooterInner {
+  width:900px;
+  margin:0 auto;
+}
+@media(max-width:$break-small) {
+  #mod_pageFooterInner {
+    width:auto;
+    text-align:center;
+  }
+}
+
+//
+// select box
+//
+
+.select-type1 {
+  span.customSelect {
+    font-size:14px;
+    color:#3f657b;
+    line-height: 33px;
+    height: 50 - 8px;
+    width: 200px;
+    margin:0 0 20px;
+    padding: 8px 0 0 10px;
+    background:image-url("bg_select1.png") no-repeat;
+  }
+  .customSelectInner {
+    width:160px !important;
+  }
+}
+.select-type2 {
+  span.customSelect {
+    font-size:14px;
+    color:#3f657b;
+    line-height: 33px;
+    height: 50 - 8px;
+    width: 300px;
+    margin:0 0 20px;
+    padding: 8px 0 0 10px;
+    background:image-url("bg_select2.png") no-repeat;
+  }
+  .customSelectInner {
+    width:260px !important;
+  }
+}
+.customSelectInner {
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
