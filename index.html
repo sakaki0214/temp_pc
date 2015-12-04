@@ -16,38 +16,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <link rel="shortcut icon" href="images/favicon.ico">
 <link rel="stylesheet" href="css/style.css" media="all">
-<script src="js/jquery-1.10.1.min.js"></script>
-<script src="js/common.js"></script>
 <!--[if lt IE 9]>
 <script src="js/html5.js"></script>
 <script src="js/ie9.js"></script>
 <![endif]-->
 </head>
 <body>
-<header id="mod_pageHeader">
-  <div id="mod_pageHeaderInner">
-    <h1>タイトル</h1>
+<header class="page-header">
+  <div class="page-header__inner">
+    <h1 class="page-header__heading">タイトル</h1>
   </div>
 </header>
-<div id="mod_pageContents">
-  <article id="mod_pageMain">
+<div class="contents">
+  <article class="contents__main">
     <section>
-      <h2>見出し</h2>
+      <h2 class="heading-lv1">見出し</h2>
       <p>sectionの中です。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
       <h3 class="pageTitleH3">中見出し</h3>
       <p>sectionの中です。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
       <p>sectionの中です。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
     </section>
     <section>
-      <h2>見出し</h2>
+      <h2 class="heading-lv1">見出し</h2>
       <p>sectionの中です。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
     </section>
   </article>
-  <div id="mod_pageSide">
-    <aside id="ad1">
+  <div class="contents__side">
+    <aside class="ad1">
     <figure><img src="img/sp.png" alt="" width="200" height="200"></figure>
     </aside>
-    <div id="list1">
+    <div class="list1">
       <ul>
         <li>リスト</li>
         <li>リスト</li>
@@ -56,10 +54,14 @@
     </div>
   </div>
 </div>
-<footer id="mod_pageFooter">
-  <div id="mod_pageFooterInner">
-    <p><small>&copy; 2013 all rights reserved.</small></p>
+<footer class="page-footer">
+  <div class="page-footer__inner">
+    <p><small>&copy; 2015 all rights reserved.</small></p>
   </div>
 </footer>
+
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="js/common.js"></script>
+
 </body>
 </html>

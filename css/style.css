@@ -130,31 +130,31 @@ textarea {
   font-family: "ＭＳ Ｐゴシック", "MS PGothic", Osaka;
 }
 
-#mod_pageHeader {
+.page-header {
   background: #ccc;
   padding: 1px 15px;
 }
-#mod_pageHeader h1 {
+.page-header h1 {
   font-size: 20px;
 }
 
 @media (max-width: 768px) {
-  #mod_pageHeader h1 {
+  .page-header h1 {
     font-size: 18px;
   }
 }
-#mod_pageHeaderInner {
+.page-header__inner {
   width: 900px;
   margin: 0 auto;
 }
 
 @media (max-width: 768px) {
-  #mod_pageHeaderInner {
+  .page-header__inner {
     text-align: center;
     width: auto;
   }
 }
-#mod_pageContents {
+.contents {
   background: #ddd;
   width: 860px;
   margin: 0 auto;
@@ -164,57 +164,57 @@ textarea {
 }
 
 @media (max-width: 768px) {
-  #mod_pageContents {
+  .contents {
     width: auto;
     padding: 1px 15px;
   }
 }
-#mod_pageMain {
+.contents__main {
   background: #ccc;
   float: left;
   width: 645px;
 }
 
 @media (max-width: 768px) {
-  #mod_pageMain {
+  .contents__main {
     float: none;
     width: 100%;
     margin: 0 0 25px;
   }
 }
-#mod_pageSide {
+.contents__side {
   background: #ccc;
   float: right;
   width: 200px;
 }
-#mod_pageSide ul {
+.contents__side ul {
   list-style-type: none;
   padding-left: 0;
 }
 
 @media (max-width: 768px) {
-  #mod_pageSide {
+  .contents__side {
     float: none;
     width: 100%;
   }
 }
-#mod_pageFooter {
+.page-footer {
   padding: 1px 15px;
   background: #eee;
   color: #000;
 }
-#mod_pageFooter small {
+.page-footer small {
   font-size: 80%;
   color: #999;
 }
 
-#mod_pageFooterInner {
+.page-footer__inner {
   width: 900px;
   margin: 0 auto;
 }
 
 @media (max-width: 768px) {
-  #mod_pageFooterInner {
+  .page-footer__inner {
     width: auto;
     text-align: center;
   }
