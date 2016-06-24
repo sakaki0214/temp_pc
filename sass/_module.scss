@@ -3,67 +3,60 @@ $break-medium:900px;
 
 .page-header {
   background:#ccc;
-  padding:1px 15px;
+  padding:10px 15px;
   .page-header__heading {
     font-size:20px;
-  }
-}
-@media(max-width:$break-small) {
-  .page-header {
-    .page-header__heading {
+    @media(max-width:$break-small) {
       font-size:17px;
     }
   }
 }
+
 .page-header__inner {
   width:900px;
   margin:0 auto;
-}
-@media(max-width:$break-small) {
-  .page-header__inner {
-    text-align:center;
+  @media(max-width:$break-small) {
     width:auto;
+    text-align:center;
   }
 }
+
 .contents {
   background:#ddd;
   width:860px;
   margin:0 auto;
   padding:20px;
-  overflow:hidden;
-  *zoom:1;
-}
-@media(max-width:$break-small) {
-  .contents {
+  &:after {
+    content:"";
+    display:table;
+    clear:both;
+  }
+  @media(max-width:$break-small) {
     width:auto;
     padding:1px 15px;
   }
 }
+
 .contents__main {
   background:#ccc;
   float:left;
   width:645px;
-}
-@media(max-width:$break-small) {
-  .contents__main {
+  @media(max-width:$break-small) {
     float:none;
     width:100%;
     margin:0 0 25px;
   }
 }
+
 .contents__side {
-  background:#ccc;
   float:right;
   width:200px;
-  #ad1 {
-  }
+  background:#ccc;
   ul {
     list-style-type:none;
     padding-left:0;
   }
-}
-@media(max-width:$break-small) {
-.contents__side {
+  @media(max-width:$break-small) {
     float:none;
     width:100%;
   }
@@ -73,6 +66,9 @@ $break-medium:900px;
   padding:1px 15px;
   background:#eee;
   color:#000;
+  .cr {
+    text-align:center;
+  }
   small {
     font-size:80%;
     color:#999;
@@ -81,50 +77,8 @@ $break-medium:900px;
 .page-footer__inner {
   width:900px;
   margin:0 auto;
-}
-@media(max-width:$break-small) {
-  .page-footer__inner{
+  @media(max-width:$break-small) {
     width:auto;
     text-align:center;
   }
-}
-
-//
-// select box
-//
-
-.select-type1 {
-  span.customSelect {
-    font-size:14px;
-    color:#3f657b;
-    line-height: 33px;
-    height: 50 - 8px;
-    width: 200px;
-    margin:0 0 20px;
-    padding: 8px 0 0 10px;
-    background:image-url("bg_select1.png") no-repeat;
-  }
-  .customSelectInner {
-    width:160px !important;
-  }
-}
-.select-type2 {
-  span.customSelect {
-    font-size:14px;
-    color:#3f657b;
-    line-height: 33px;
-    height: 50 - 8px;
-    width: 300px;
-    margin:0 0 20px;
-    padding: 8px 0 0 10px;
-    background:image-url("bg_select2.png") no-repeat;
-  }
-  .customSelectInner {
-    width:260px !important;
-  }
-}
-.customSelectInner {
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
 }

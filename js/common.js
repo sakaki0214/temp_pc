@@ -1,6 +1,7 @@
 $(function() {
   //smooth scroll
-  $('a[href^=#]').click(function() {
+  $('a[href^="#"]').click(function() {
+    console.log('click');
     var speed = 400; // ミリ秒
     var href= $(this).attr("href");
     var target = $(href == "#" || href == "" ? 'html' : href);
