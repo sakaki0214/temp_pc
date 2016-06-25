@@ -1,0 +1,30 @@
+extend include/_base.pug
+block head-title
+  title top title
+block head-keyword
+  meta(name="keywords" content="TOPページ, hoge")
+block head-description
+  meta(name="description" content="TOPページの説明文")
+  body
+    include include/_header
+    div.contents
+      div.contents__main
+        section
+          h2.heading-lv1 大見出し
+          p テキストが入りますテキストが入りますテキストが入りますテキストが入ります
+          section
+            h3.heading-lv2 中見出し
+            p テキストが入りますテキストが入りますテキストが入りますテキストが入ります
+            section
+            h4.heading-lv3 小見出し
+            p
+              |テキストが入りますテキストが入りますテキストが入りますテキストが入ります
+              br
+              |改行
+        ul
+          li リスト項目
+          li リスト項目
+      div.contents__side
+        include include/_side
+      p.btn-pagetop: a(href="#") PAGE TOP
+    include include/_footer

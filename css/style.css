@@ -1,9 +1,9 @@
 @charset "UTF-8";
-/* 
+/*
 html5doctor.com Reset Stylesheet
 v1.6.1
 Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com 
+Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
@@ -105,7 +105,7 @@ address, caption, cite, code, dfn, em, strong, th, var {
 }
 
 body {
-  background: #fff;
+  background: #efefef;
   color: #333;
   font-family: 'Lucida Grande','Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
   font-size: 14px;
@@ -130,127 +130,99 @@ textarea {
   font-family: "ＭＳ Ｐゴシック", "MS PGothic", Osaka;
 }
 
-#mod_pageHeader {
+.page-header {
   background: #ccc;
-  padding: 1px 15px;
+  padding: 10px 15px;
 }
-#mod_pageHeader h1 {
+.page-header .page-header__heading {
   font-size: 20px;
 }
-
 @media (max-width: 768px) {
-  #mod_pageHeader h1 {
-    font-size: 18px;
+  .page-header .page-header__heading {
+    font-size: 17px;
   }
 }
-#mod_pageHeaderInner {
+
+.page-header__inner {
   width: 900px;
   margin: 0 auto;
 }
-
 @media (max-width: 768px) {
-  #mod_pageHeaderInner {
-    text-align: center;
+  .page-header__inner {
     width: auto;
+    text-align: center;
   }
 }
-#mod_pageContents {
+
+.contents {
   background: #ddd;
   width: 860px;
   margin: 0 auto;
   padding: 20px;
-  overflow: hidden;
-  *zoom: 1;
 }
-
+.contents:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 @media (max-width: 768px) {
-  #mod_pageContents {
+  .contents {
     width: auto;
     padding: 1px 15px;
   }
 }
-#mod_pageMain {
+
+.contents__main {
   background: #ccc;
   float: left;
   width: 645px;
 }
-
 @media (max-width: 768px) {
-  #mod_pageMain {
+  .contents__main {
     float: none;
     width: 100%;
     margin: 0 0 25px;
   }
 }
-#mod_pageSide {
-  background: #ccc;
+
+.contents__side {
   float: right;
   width: 200px;
+  background: #ccc;
 }
-#mod_pageSide ul {
+.contents__side ul {
   list-style-type: none;
   padding-left: 0;
 }
-
 @media (max-width: 768px) {
-  #mod_pageSide {
+  .contents__side {
     float: none;
     width: 100%;
   }
 }
-#mod_pageFooter {
+
+.page-footer {
   padding: 1px 15px;
   background: #eee;
   color: #000;
 }
-#mod_pageFooter small {
+.page-footer .cr {
+  text-align: center;
+}
+.page-footer small {
   font-size: 80%;
   color: #999;
 }
 
-#mod_pageFooterInner {
+.page-footer__inner {
   width: 900px;
   margin: 0 auto;
 }
-
 @media (max-width: 768px) {
-  #mod_pageFooterInner {
+  .page-footer__inner {
     width: auto;
     text-align: center;
   }
-}
-.select-type1 span.customSelect {
-  font-size: 14px;
-  color: #3f657b;
-  line-height: 33px;
-  height: 42px;
-  width: 200px;
-  margin: 0 0 20px;
-  padding: 8px 0 0 10px;
-  background: url('../img/bg_select1.png?1435538886') no-repeat;
-}
-.select-type1 .customSelectInner {
-  width: 160px !important;
-}
-
-.select-type2 span.customSelect {
-  font-size: 14px;
-  color: #3f657b;
-  line-height: 33px;
-  height: 42px;
-  width: 300px;
-  margin: 0 0 20px;
-  padding: 8px 0 0 10px;
-  background: url('../img/bg_select2.png?1435538841') no-repeat;
-}
-.select-type2 .customSelectInner {
-  width: 260px !important;
-}
-
-.customSelectInner {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 /* TOP

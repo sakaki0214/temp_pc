@@ -1,6 +1,7 @@
 .DS_Store
 Thumb.db
 .sass-cache/
+node_modules/
 
 *.aif
 *.mid
