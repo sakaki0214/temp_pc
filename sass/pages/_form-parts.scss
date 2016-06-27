@@ -2,5 +2,55 @@
 ------------------------------------------*/
 
 //
+// layout
+//
+.form-table {
+  width: 100%;
+  th {
+    padding:10px;
+    background:#efefef;
+    text-align:left;
+    font-weight:normal;
+  }
+  td {
+    padding:10px;
+    background:#fff;
+  }
+}
+
+//
+// text box
+//
+$text-padding:8px;
+.form-parts__text {
+  padding:$text-padding;
+  &.w100 {
+    width:100 - $text-padding - $text-padding;
+  }
+  &.w468 {
+    width:468 - $text-padding - $text-padding;
+  }
+}
+.form-parts__hyphen {
+  padding:0 3px 0 6px;
+}
+
+//
+// textarea
+//
+
+
+//
+// radio
+//
+
+
+//
+// checkboc
+//
+
+
+
+//
 // select box
 //

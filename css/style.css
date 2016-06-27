@@ -229,14 +229,17 @@ body[data-os^="Android 5"] {
 }
 
 .heading-lv1 {
+  margin: 0 0 20px;
   font-size: 20px;
 }
 
 .heading-lv2 {
+  margin: 0 0 15px;
   font-size: 18px;
 }
 
 .heading-lv3 {
+  margin: 0 0 10px;
   font-size: 16px;
 }
 
@@ -306,4 +309,34 @@ body[data-os^="Android 5"] {
   border-bottom: 4px solid #22ab39;
   margin: 0 0 15px;
   padding: 10px 0;
+}
+
+/* form-parts
+------------------------------------------*/
+.form-table {
+  width: 100%;
+}
+.form-table th {
+  padding: 10px;
+  background: #efefef;
+  text-align: left;
+  font-weight: normal;
+}
+.form-table td {
+  padding: 10px;
+  background: #fff;
+}
+
+.form-parts__text {
+  padding: 8px;
+}
+.form-parts__text.w100 {
+  width: 84px;
+}
+.form-parts__text.w468 {
+  width: 452px;
+}
+
+.form-parts__hyphen {
+  padding: 0 3px 0 6px;
 }

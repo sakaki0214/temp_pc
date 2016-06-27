@@ -1,0 +1,50 @@
+extend ../include/_base.pug
+block head-title
+  title form parts
+block head-keyword
+  meta(name="keywords" content="下層ページ, hoge")
+block head-description
+  meta(name="description" content="下層ページの説明文")
+block css-link
+  link(rel="stylesheet" href="../css/style.css")
+
+block prepend body
+  include ../include/_header
+  div.contents
+    div.contents__main
+      section
+        h2.heading-lv1 form parts
+        form(action="#" method="post")
+          table.form-table
+            tr
+              th 名前
+              td: input.form-parts__text.w468(type="text")
+            tr
+              th 電話番号
+              td
+                input.form-parts__text.w100(type="text")
+                span.form-parts__hyphen -
+                input.form-parts__text.w100(type="text")
+                span.form-parts__hyphen -
+                input.form-parts__text.w100(type="text")
+            tr
+              th 性別
+              td
+                ul
+                  li
+                    label
+                      input(type="radio" name="asdf" value="1")
+                      |男性
+                  li
+                    label
+                      input(type="radio" name="asdf" value="2")
+                      |女性
+
+
+    div.contents__side
+      include ../include/_side
+    p.btn-pagetop: a(href="#") PAGE TOP
+
+  include ../include/_footer
+block js-link
+  script(src="../js/common.js")
