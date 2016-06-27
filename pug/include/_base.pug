@@ -2,10 +2,21 @@ doctype html
 html(lang="ja")
   head
     meta(charset="utf-8")
-    meta(http-equiv="X-UA Compatible" content="IE=edge")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
     block head-title
+      title サイト名
     block head-keyword
+      meta(name="keywords" content="サイト名")
     block head-description
+      meta(name="description" content="サイトの説明文")
     meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no")
-    link(rel="shortcut icon" href="favicon.ico")
-    link(rel="stylesheet" href="/css/style.css")
+    block favicon-link
+    link(rel="shortcut icon" href="/favicon.ico")
+    block css-link
+      link(rel="stylesheet" href="/css/style.css")
+  body
+    block body
+      script(src="//code.jquery.com/jquery-3.0.0.min.js")
+      script(src="//code.jquery.com/jquery-migrate-3.0.0.js")
+    block js-link
+        script(src="/js/common.js")
