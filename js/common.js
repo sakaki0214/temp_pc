@@ -44,7 +44,7 @@
 })();
 
 
-$(function() {
+$(function($) {
 
   //smooth scroll
   $('a[href^="#"]').click(function() {
@@ -56,4 +56,11 @@ $(function() {
     $('body,html').animate({scrollTop:position}, speed, 'swing');
     return false;
   });
+
+  //form-validation
+  $('form[data-validate]').on('input', function(){
+    console.log(this.checkValidity());
+    $(this).find(':submit').attr('disabled', !this.checkValidity());
+  });
+
 });

@@ -1,44 +1,136 @@
 /* form-parts
 ------------------------------------------*/
 
+$text-padding:8px; //テキスト入力の余白
+$form-parts__mb:5px; //各パーツのmargin-bottom
+
+
 //
 // layout
 //
+.form-parts__lead_tx {
+  margin:0 0 20px;
+}
 .form-table {
   width: 100%;
+  margin:0 0 20px;
   th {
+    width:130px;
     padding:10px;
     background:#efefef;
     text-align:left;
     font-weight:normal;
+    border:1px solid #ccc;
+    vertical-align:top;
   }
   td {
-    padding:10px;
+    padding:10px 10px 5px;
     background:#fff;
+    border:1px solid #ccc;
+  }
+  .must {
+    th {
+      div {
+        position: relative;
+        padding-right:40px;
+        &:after {
+          content:"必須";
+          display:inline-block;
+          padding:1px 5px;
+          position:absolute;
+          top:0;
+          right:0;
+          background:#c00;
+          color:#fff;
+          font-size:12px;
+        }
+      }
+    }
+    td {
+      background:#fff2f2;
+    }
   }
 }
+.form-parts__btn {
+  text-align:center;
+}
+.form-parts__list {
+  li {
+    display:inline-block;
+    text-indent:-18px;
+    vertical-align:top;
+  }
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin:0 5px 0 0;
+  }
+  &.option__inline {
+    li {
+      margin:0 20px $form-parts__mb 18px;
+    }
+  }
+  &.option__w100 {
+    li {
+      width:100px;
+      margin:0 10px $form-parts__mb 18px;
+    }
+  }
+  .option__others {
+    display:block !important;
+    width:100% !important;
+    input[type="text"] {
+      margin-left:5px;
+    }
+  }
+}
+
+
+//
+// 解説
+//
+.code-sample {
+  margin:0 0 20px;
+  padding:20px;
+  background:#fff;
+}
+
+
 
 //
 // text box
 //
-$text-padding:8px;
 .form-parts__text {
+  margin-bottom:$form-parts__mb;
   padding:$text-padding;
-  &.w100 {
-    width:100 - $text-padding - $text-padding;
+  border:1px solid #ccc;
+  &.option__w100 {
+    width:100px - $text-padding - $text-padding;
   }
-  &.w468 {
-    width:468 - $text-padding - $text-padding;
+  &.option__w200 {
+    width:200px - $text-padding - $text-padding;
+  }
+  &.option__w396 {
+    width:396px - $text-padding - $text-padding;
+  }
+  &.option__w468 {
+    width:468px - $text-padding - $text-padding;
   }
 }
-.form-parts__hyphen {
+.form-parts__symbol {
   padding:0 3px 0 6px;
 }
 
 //
 // textarea
 //
-
+.form-parts__textarea {
+  height:100px;
+  padding:$text-padding;
+  border:1px solid #ccc;
+  &.option__w468 {
+    width:468px - $text-padding - $text-padding;
+  }
+}
 
 //
 // radio
@@ -54,3 +146,32 @@ $text-padding:8px;
 //
 // select box
 //
+
+
+//
+// btn
+//
+.btn__submit {
+  @include experimental(appearance,none);
+  width:200px;
+  margin:0 0 60px;
+  padding:10px 0;
+  @include background(linear-gradient(top,#fff,#efefef));
+  @include border-radius(5px);
+  border:1px solid #ccc;
+  color:#666;
+  font-size:16px;
+  text-align:center;
+  cursor:pointer;
+  &:hover {
+    @include opacity(.8);
+  }
+  &:disabled {
+    background:#efefef;
+    color:#ccc;
+    cursor:auto;
+    &:hover {
+      @include opacity(1);
+    }
+  }
+}
