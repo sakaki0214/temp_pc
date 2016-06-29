@@ -14,6 +14,16 @@ $form-parts__mb:5px; //各パーツのmargin-bottom
 .form-table {
   width: 100%;
   margin:0 0 20px;
+  @media(max-width:$break-small) {
+    width:auto;
+  }
+  tr {
+    &:first-child th {
+      @media(max-width:$break-small) {
+        border:1px solid #ccc;
+      }
+    }
+  }
   th {
     width:130px;
     padding:10px;
@@ -22,11 +32,24 @@ $form-parts__mb:5px; //各パーツのmargin-bottom
     font-weight:normal;
     border:1px solid #ccc;
     vertical-align:top;
+    @media(max-width:$break-small) {
+      display:block;
+      width:100%;
+      @include box-sizing(border-box);
+      border-top:none;
+
+    }
   }
   td {
     padding:10px 10px 5px;
     background:#fff;
     border:1px solid #ccc;
+    @media(max-width:$break-small) {
+      display:block;
+      width:100%;
+      @include box-sizing(border-box);
+      border-top:none;
+    }
   }
   .must {
     th {
@@ -34,7 +57,7 @@ $form-parts__mb:5px; //各パーツのmargin-bottom
         position: relative;
         padding-right:40px;
         &:after {
-          content:"必須";
+          content:"\5FC5\9808";//必須
           display:inline-block;
           padding:1px 5px;
           position:absolute;
@@ -86,17 +109,6 @@ $form-parts__mb:5px; //各パーツのmargin-bottom
 
 
 //
-// 解説
-//
-.code-sample {
-  margin:0 0 20px;
-  padding:20px;
-  background:#fff;
-}
-
-
-
-//
 // text box
 //
 .form-parts__text {
@@ -111,9 +123,17 @@ $form-parts__mb:5px; //各パーツのmargin-bottom
   }
   &.option__w396 {
     width:396px - $text-padding - $text-padding;
+    @media(max-width:$break-small) {
+      @include box-sizing(border-box);
+      width:100%;
+    }
   }
   &.option__w468 {
     width:468px - $text-padding - $text-padding;
+    @media(max-width:$break-small) {
+      @include box-sizing(border-box);
+      width:100%;
+    }
   }
 }
 .form-parts__symbol {
@@ -174,4 +194,29 @@ $form-parts__mb:5px; //各パーツのmargin-bottom
       @include opacity(1);
     }
   }
+}
+
+//
+// error
+//
+.error__tx {
+  color:#c00;
+  font-size:12px;
+}
+
+
+
+//
+// 解説
+//
+.explanation {
+  p {
+    margin:0 0 30px;
+  }
+}
+.code-sample {
+  margin:0 0 30px;
+  padding:20px;
+  background:#fff;
+  overflow-x: auto;
 }

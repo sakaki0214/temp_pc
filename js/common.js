@@ -57,10 +57,75 @@ $(function($) {
     return false;
   });
 
+  //
   //form-validation
+  //
+  var $textbox = $('.js-form-text');
+  var errorTx1 = '※入力内容が正しくありません。';
+  var $mail = $('.js-form-mail');
+  var $copyMail = $('.js-form-copy-mail');
+  var mailVal = $mail.val();
+  var errorTx2 = '※入力内容が一致しません。';
+
+
+  //-submit
   $('form[data-validate]').on('input', function(){
-    console.log(this.checkValidity());
+    //console.log(this.checkValidity());
     $(this).find(':submit').attr('disabled', !this.checkValidity());
   });
+
+  //-テキスト入力欄
+  $textbox.on('input blur', function(){
+    if($(this).val().match(/.+/)){
+        $(this).next('.error__tx').remove();
+      } else {
+        if($(this).next('p').hasClass('error__tx')){
+          return false;
+        } else {
+          $(this).after('<p class="error__tx">' + errorTx1 + '</p>');
+        }
+      }
+  });
+
+  //-mail（入力欄1つ：@も含めて入力）
+  $mail.on('input blur', function(){
+    if($(this).val().match(/.+@.+\..+/)){
+      $(this).next('.error__tx').remove();
+    } else {
+      if($(this).next('p').hasClass('error__tx')){
+        return false;
+      } else {
+        $(this).after('<p class="error__tx">' + errorTx1 + '</p>');
+      }
+    }
+    if($copyMail.val() == '') {
+      return false;
+    } else if($copyMail.val() !== $(this).val()) {
+      if($copyMail.next('p').hasClass('error__tx')){
+        return false;
+      } else {
+        $copyMail.after('<p class="error__tx">' + errorTx1 + '</p>');
+      }
+    } else if($copyMail.val() == $(this).val()) {
+      $copyMail.next('.error__tx').remove();
+    }
+  });
+
+  $copyMail.on('input blur', function(){
+    if($mail.val() !== $(this).val()){
+      if($(this).next('p').hasClass('error__tx')){
+        return false;
+      } else {
+        $(this).after('<p class="error__tx">' + errorTx1 + '</p>');
+      }
+    } else {
+      $(this).next('.error__tx').remove();
+    }
+  });
+
+
+  //-mail（入力欄2つ：@の前後を入力）
+
+
 
 });

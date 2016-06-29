@@ -37,7 +37,7 @@
                   <div>名前</div>
                 </th>
                 <td>
-                  <input class="form-parts__text option__w468" type="text" name="name" placeholder="例）山田太郎" autofocus required>
+                  <input class="form-parts__text option__w468 js-form-text" type="text" name="name" placeholder="例）山田太郎" autofocus required>
                 </td>
               </tr>
               <tr class="must">
@@ -45,7 +45,7 @@
                   <div>名前<br>（ひらがな）</div>
                 </th>
                 <td>
-                  <input class="form-parts__text option__w468" type="text" name="name-kana" placeholder="例）やまだたろう" autofocus required>
+                  <input class="form-parts__text option__w468 js-form-text" type="text" name="name-kana" placeholder="例）やまだたろう" required>
                 </td>
               </tr>
               <tr class="must">
@@ -53,9 +53,9 @@
                   <div>メールアドレス</div>
                 </th>
                 <td>
-                  <input class="form-parts__text option__w468" type="email" name="email" required>
-                  <p>確認の為、上と同じアドレスをご入力ください</p>
-                  <input class="form-parts__text option__w468" type="email" name="email" required>
+                  <input class="form-parts__text option__w468 js-form-mail" type="email" name="email">
+                  <p>確認の為、同じアドレスをご入力ください</p>
+                  <input class="form-parts__text option__w468 js-form-copy-mail" type="email" name="email">
                 </td>
               </tr>
               <tr class="must">
@@ -63,6 +63,9 @@
                   <div>メールアドレス</div>
                 </th>
                 <td>
+                  <input class="form-parts__text option__w200" type="email" name="email"><span class="form-parts__symbol">@</span>
+                  <input class="form-parts__text option__w200" type="email" name="email">
+                  <p>確認の為、同じアドレスをご入力ください</p>
                   <input class="form-parts__text option__w200" type="email" name="email"><span class="form-parts__symbol">@</span>
                   <input class="form-parts__text option__w200" type="email" name="email">
                 </td>
@@ -220,8 +223,12 @@
             </p>
           </form>
         </section>
-        <section>
+        <section class="explanation">
           <h2 class="heading-lv1">form parts 解説</h2>
+          <section>
+            <h3 class="heading-lv2">対応ブラウザ</h3>
+            <p>IE9〜、Chrome、Safari、Firefox</p>
+          </section>
           <section>
             <h3 class="heading-lv2">text box</h3>
             <pre class="code-sample">input.form-parts__text.option__w468(type="text" name="name")</pre>
@@ -229,6 +236,13 @@
           <section>
             <h3 class="heading-lv2">radio</h3>
             <pre class="code-sample">input(type="radio" name="poiu" value="8")</pre>
+          </section>
+          <section>
+            <h3 class="heading-lv2">email</h3>
+            <pre class="code-sample">input.form-parts__text.option__w468.js-form-mail(type="email" name="email")
+p 確認の為、同じアドレスをご入力ください
+input.form-parts__text.option__w468.js-form-copy-mail(type="email" name="email")</pre>
+            <p>※.js-form-mail、.js-form-copy-mailをいれるとバリデーションがはいります。</p>
           </section>
         </section>
       </div>
