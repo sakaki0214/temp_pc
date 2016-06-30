@@ -103,6 +103,11 @@ $form-parts__mb:5px; //各パーツのmargin-bottom
     width:100% !important;
     input[type="text"] {
       margin-left:5px;
+      @media(max-width:$break-small) {
+        width:100%;
+        margin:5px 0 0 -18px;
+        @include box-sizing(border-box);
+      }
     }
   }
 }
@@ -115,6 +120,8 @@ $form-parts__mb:5px; //各パーツのmargin-bottom
   margin-bottom:$form-parts__mb;
   padding:$text-padding;
   border:1px solid #ccc;
+  @include border-radius(0);
+  @include box-shadow(0 0 0 #000 inset);
   &.option__w100 {
     width:100px - $text-padding - $text-padding;
   }
@@ -139,6 +146,9 @@ $form-parts__mb:5px; //各パーツのmargin-bottom
 .form-parts__symbol {
   padding:0 3px 0 6px;
 }
+input[type="text"]:disabled {
+  background:#efefef;
+}
 
 //
 // textarea
@@ -149,6 +159,10 @@ $form-parts__mb:5px; //各パーツのmargin-bottom
   border:1px solid #ccc;
   &.option__w468 {
     width:468px - $text-padding - $text-padding;
+    @media(max-width:$break-small) {
+      @include box-sizing(border-box);
+      width:100%;
+    }
   }
 }
 

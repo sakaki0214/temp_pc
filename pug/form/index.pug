@@ -40,6 +40,12 @@ block prepend body
                 span.form-parts__symbol @
                 input.form-parts__text.option__w200(type="email" name="email")
             tr.must
+              th: div パスワード
+              td
+                input.form-parts__text.option__w468.js-form-pw(type="password" name="email")
+                p 確認の為、同じパスワードをご入力ください
+                input.form-parts__text.option__w468.js-form-copy-pw(type="password" name="email")
+            tr.must
               th: div 電話番号
               td
                 input.form-parts__text.option__w100(type="tel" name="tel1")
@@ -101,9 +107,9 @@ block prepend body
                       |新聞
                   li.option__others
                     label
-                      input(type="checkbox" name="qwer" value="8")
+                      input.js-others#js-others1(type="checkbox" name="qwer" value="8")
                       |その他
-                      input.form-parts__text.option__w396(type="text")
+                      input.form-parts__text.option__w396.js-others-tx(type="text" name="" disabled)
             tr
               th: div このサイトを知ったきっかけ
               td

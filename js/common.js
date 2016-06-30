@@ -1,4 +1,4 @@
-// font
+// font (code grid -> https://app.codegrid.net/entry/2016-choosing-fonts-3)
 (function () {
   var ua = window.navigator.userAgent;
   var os, version, matched;
@@ -66,6 +66,9 @@ $(function($) {
   var $copyMail = $('.js-form-copy-mail');
   var mailVal = $mail.val();
   var errorTx2 = '※入力内容が一致しません。';
+  var $pw = $('.js-form-pw');
+  var $copyPw = $('.js-form-copy-pw');
+  var pwVal = $pw.val();
 
 
   //-submit
@@ -128,4 +131,82 @@ $(function($) {
 
 
 
+  //-pw
+  $pw.on('input blur', function(){
+    if($(this).val().match(/^[a-zA-Z¥s]+$/)){
+      $(this).next('.error__tx').remove();
+    } else {
+      if($(this).next('p').hasClass('error__tx')){
+        return false;
+      } else {
+        $(this).after('<p class="error__tx">' + errorTx1 + '</p>');
+      }
+    }
+    if($copyPw.val() == ''){
+      return false;
+    } else if($copyPw.val() !== $(this).val()) {
+      if($copyPw.next('p').hasClass('error__tx')){
+        return false;
+      } else {
+        $copyPw.after('<p class="error__tx">' + errorTx1 + '</p>');
+      }
+    } else if($copyPw.val() == $(this).val()) {
+      $copyPw.next('.error__tx').remove();
+    }
+  });
+  $copyPw.on('input blur', function(){
+    if($pw.val() !== $(this).val()){
+      if($(this).next('p').hasClass('error__tx')){
+        return false;
+      } else {
+        $(this).after('<p class="error__tx">' + errorTx1 + '</p>');
+      }
+    } else {
+      $(this).next('.error__tx').remove();
+    }
+  });
+
+
+//設備・こだわり条件
+  var $othersCheckbox = $('.js-others');
+  var $othersTx = $('.js-others-tx');
+  var saveTxOthers;
+  $othersCheckbox.on('click', function(){
+    if($(this).prop('checked')){
+      $othersTx.prop('disabled', false);
+      $othersTx.val(saveTxOthers);
+    } else {
+      $othersTx.prop('disabled', true);
+      saveTxOthers = $othersTx.val();
+      $othersTx.val('');
+    }
+  });
+
+
+  //-others(radio & text)
+  var textOthers = function(_containerId){
+    var self = this;
+    this.containerId = '#' + _containerId;
+    this.othersCheck = '.js-others';
+    this.othersTx = '.js-others-tx';
+    this.saveTx = '';
+
+    $(this.containerId).on('click', function(){
+
+      self.hoge();
+    });
+  };
+  textOthers.prototype.hoge = function(){
+    var self = this;
+    if($(self.othersCheck).prop('checked')){
+      $(self.othersTx).prop('disabled', false);
+      $(self.othersTx).val(self.saveTx);
+    } else {
+      $othersTx.prop('disabled', true);
+      saveTxOthers = $othersTx.val();
+      $othersTx.val('');
+    }
+  };
+
+  var others1 = new textOthers('js-others1');
 });

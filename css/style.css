@@ -466,11 +466,26 @@ body[data-os^="Android 5"] {
 .form-parts__list .option__others input[type="text"] {
   margin-left: 5px;
 }
+@media (max-width: 768px) {
+  .form-parts__list .option__others input[type="text"] {
+    width: 100%;
+    margin: 5px 0 0 -18px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
 
 .form-parts__text {
   margin-bottom: 5px;
   padding: 8px;
   border: 1px solid #ccc;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-box-shadow: 0 0 0 #000 inset;
+  -webkit-box-shadow: 0 0 0 #000 inset;
+  box-shadow: 0 0 0 #000 inset;
 }
 .form-parts__text.option__w100 {
   width: 84px;
@@ -505,6 +520,10 @@ body[data-os^="Android 5"] {
   padding: 0 3px 0 6px;
 }
 
+input[type="text"]:disabled {
+  background: #efefef;
+}
+
 .form-parts__textarea {
   height: 100px;
   padding: 8px;
@@ -512,6 +531,14 @@ body[data-os^="Android 5"] {
 }
 .form-parts__textarea.option__w468 {
   width: 452px;
+}
+@media (max-width: 768px) {
+  .form-parts__textarea.option__w468 {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+  }
 }
 
 .btn__submit {
