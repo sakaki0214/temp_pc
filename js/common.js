@@ -167,7 +167,25 @@ $(function($) {
   });
 
 
-//設備・こだわり条件
+  //-others(check & text)
+  //radio
+  var $radioOn = $('.js-radio-on');
+  var $radioOff = $('.form-parts__list input[type="radio"]:not(.js-radio-on)');
+  var $radioTx = $('.js-radio-tx');
+  var saveTxNum;
+  $radioOn.on('click', function(){
+    console.log('on-click');
+    $radioTx.prop('disabled', false);
+    $radioTx.val(saveTxNum);
+  });
+  $radioOff.on('click', function(){
+    console.log('off-click');
+    $radioTx.prop('disabled', true);
+    saveTxNum = $radioTx.val();
+    $radioTx.val('');
+  });
+
+  //checkbox
   var $othersCheckbox = $('.js-others');
   var $othersTx = $('.js-others-tx');
   var saveTxOthers;
@@ -183,30 +201,4 @@ $(function($) {
   });
 
 
-  //-others(radio & text)
-  var textOthers = function(_containerId){
-    var self = this;
-    this.containerId = '#' + _containerId;
-    this.othersCheck = '.js-others';
-    this.othersTx = '.js-others-tx';
-    this.saveTx = '';
-
-    $(this.containerId).on('click', function(){
-
-      self.hoge();
-    });
-  };
-  textOthers.prototype.hoge = function(){
-    var self = this;
-    if($(self.othersCheck).prop('checked')){
-      $(self.othersTx).prop('disabled', false);
-      $(self.othersTx).val(self.saveTx);
-    } else {
-      $othersTx.prop('disabled', true);
-      saveTxOthers = $othersTx.val();
-      $othersTx.val('');
-    }
-  };
-
-  var others1 = new textOthers('js-others1');
 });
