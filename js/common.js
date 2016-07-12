@@ -200,5 +200,9 @@ $(function($) {
     }
   });
 
+  //
+  //form-decoration
+  //
+  $('.fmselect').customSelect();
 
 });

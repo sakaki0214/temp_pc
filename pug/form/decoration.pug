@@ -13,16 +13,16 @@ block prepend body
   div.contents
     div.contents__main
       section
-        h2.heading-lv1 form parts
+        h2.heading-lv1 form parts（decoration）
         p.form-parts__lead_tx テキストがはいりますテキストがはいりますテキストがはいります。
         form(action="#" method="post" data-validate)
           table.form-table
             tr.must
-              th: div 名前
-              td: input.form-parts__text.option__w468.js-form-text(type="text" name="name" placeholder="例）山田太郎" autofocus required)
+              th: div option__deco1
+              td: input.form-parts__text.option__w468.js-form-text.option__deco1(type="text" name="name" placeholder="例）山田太郎" autofocus required)
             tr.must
-              th: div 名前<br>（ひらがな）
-              td: input.form-parts__text.option__w468.js-form-text(type="text" name="name-kana" placeholder="例）やまだたろう" required)
+              th: div option__deco2
+              td: input.form-parts__text.option__w468.js-form-text.option__deco2(type="text" name="name-kana" placeholder="例）やまだたろう" required)
             tr.must
               th: div メールアドレス
               td
@@ -150,12 +150,21 @@ block prepend body
             tr
               th: div セレクトボックス
               td
-                select(name="selectbox").form-parts__select
-                  option(value="1") テキストがはいります
-                  option(value="2") テキストがはいります
-                  option(value="3") テキストがはいります
-                  option(value="4") テキストがはいります
-                  option(value="5") テキストがはいります
+                div.option__select_deco1: select(name="selectbox").fmselect
+                  option(value="1") テキストがはいります1
+                  option(value="2") テキストがはいります2
+                  option(value="3") テキストがはいります3
+                  option(value="4") テキストがはいります4
+                  option(value="5") テキストがはいります5
+            tr
+              th: div セレクトボックス2
+              td
+                div.option__select_deco2: select(name="selectbox2").fmselect.option__select_w300
+                  option(value="1") テキストがはいります11
+                  option(value="2") テキストがはいります22
+                  option(value="3") テキストがはいります33
+                  option(value="4") テキストがはいります44
+                  option(value="5") テキストがはいります55
             tr
               th: div 備考
               td
@@ -192,4 +201,5 @@ block prepend body
 
   include ../include/_footer
 block js-link
+  script(src="../js/jquery.customSelect.min.js")
   script(src="../js/common.js")
