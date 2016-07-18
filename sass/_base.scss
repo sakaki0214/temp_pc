@@ -89,7 +89,6 @@ address, caption, cite, code, dfn, em, strong, th, var {
 body {
 	background: #efefef;
 	color: #333;
-	font-family: 'Lucida Grande','Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
 	font-size:14px;
 	line-height: 1.5;
 }
@@ -99,11 +98,51 @@ h1, h2, h3, h4, h5, h6 {
 p, li, dt, dd {
 	line-height:1.5;
 }
-input,
-textarea {
-	font-family: 'Lucida Grande','Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+a {
+	&:link {
+		color:#2c8893;
+	}
+	&:visited {
+		color:#2c8893;
+	}
+	&:hover {
+		color:lighten(#2c8893, 20%);;
+	}
 }
-* html input,
-* html textarea {
-	font-family:"ＭＳ Ｐゴシック", "MS PGothic", Osaka;
+
+// font
+@font-face {
+  font-family: MyYuGothic;
+  font-weight: normal;
+  src: local(YuGothic-Medium),
+       local("Yu Gothic Medium"); /* for Chrome */
+}
+@font-face {
+  font-family: MyYuGothic;
+  font-weight: bold;
+  src: local(YuGothic-Bold),
+       local("Yu Gothic"); /* for Chrome */
+}
+
+body {
+  font-family: sans-serif;
+}
+body[data-os^="Windows"] {
+  font-family: "Noto Sans CJK JP", Meiryo, sans-serif;
+}
+body[data-os="Windows 10"] {
+  font-family: "Noto Sans CJK JP", MyYuGothic, Meiryo, sans-serif;
+}
+body[data-os^="Mac OS"] {
+  font-family: "Noto Sans Japanese", YuGothic, sans-serif;
+}
+body[data-os^="iOS"] {
+  font-family: sans-serif;
+}
+body[data-os^="Android"] {
+  font-family: Roboto, sans-serif;
+}
+body[data-os^="Android 4"],
+body[data-os^="Android 5"] {
+  font-family: Roboto, MotoyaLCedar, sans-serif;
 }

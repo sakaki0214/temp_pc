@@ -1,0 +1,123 @@
+/* form-parts
+------------------------------------------*/
+
+// form/decoration.html 内で使っているパーツ
+
+//
+// text box
+//
+.option__deco1 {
+  padding:15px;
+  border:2px solid #000;
+  font-size:20px;
+}
+.option__deco2 {
+  padding:8px 0;
+  border:none;
+  border-bottom:1px dotted #999;
+  background:none;
+}
+
+//
+// textarea
+//
+
+
+//
+// radio
+//
+
+
+//
+// checkboc
+//
+
+
+
+//
+// select box
+//
+.fmselect {
+  width: 420px;
+  padding:10px;
+  background:#efefef;
+  border:2px solid #ccc;
+  @include border-radius(5px);
+  font-weight: bold;
+  font-size:18px;
+  color:#666;
+  &.option__select_w300 {
+    width:300px;
+  }
+}
+@mixin hoge($width) {
+  position: relative;
+  width: $width;
+  &:after {
+    content:"▼";
+    position: absolute;
+    top:15px;
+    right:15px;
+    color:#666;
+    font-size:12px;
+  }
+}
+.option__select_deco1 {
+  @include hoge(444px);
+}
+.option__select_deco2 {
+  @include hoge(324px);
+}
+
+//
+// btn
+//
+.btn__submit {
+  @include experimental(appearance,none);
+  width:200px;
+  margin:0 0 60px;
+  padding:10px 0;
+  @include background(linear-gradient(top,#fff,#efefef));
+  @include border-radius(5px);
+  border:1px solid #ccc;
+  color:#666;
+  font-size:16px;
+  text-align:center;
+  cursor:pointer;
+  &:hover {
+    @include opacity(.8);
+  }
+  &:disabled {
+    background:#efefef;
+    color:#ccc;
+    cursor:auto;
+    &:hover {
+      @include opacity(1);
+    }
+  }
+}
+
+//
+// error
+//
+.error__tx {
+  color:#c00;
+  font-size:12px;
+}
+
+
+
+//
+// 解説
+//
+.explanation {
+  p {
+    margin:0 0 30px;
+  }
+}
+.code-sample {
+  margin:0 0 30px;
+  padding:20px;
+  background:#fff;
+  overflow-x: auto;
+}
