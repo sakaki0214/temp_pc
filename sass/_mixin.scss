@@ -15,3 +15,63 @@
   margin:0 0 15px;
   padding:10px 0;
 }
+
+
+//
+// media query
+//
+$mq-breakpoint-small: 768px;
+$mq-breakpoint-medium: 900px;
+
+@mixin mq-medium {
+  @media(min-width: $mq-breakpoint-small) and (max-width: $mq-breakpoint-medium - 1) {
+    @content;
+  }
+}
+@mixin mq-small {
+  @media(max-width: #{$mq-breakpoint-small - 1}) {
+    @content;
+  }
+}
+
+// 例）
+// .hoge {
+//   @include mq-small {
+//     color: red;
+//   }
+// }
+
+//
+// media query 2
+//
+@mixin mq-screen($min-width, $max-width) {
+  @media screen and (min-width: $min-width) and (max-width: $max-width) {
+    @content;
+  }
+}
+@mixin mq-screen-min($min-width) {
+  @media screen and (min-width: $min-width) {
+    @content;
+  }
+}
+@mixin mq-screen-max($max-width) {
+  @media screen and (max-width: $max-width) {
+    @content;
+  }
+}
+
+// .hoge {
+//   @include mq-screen(600px, 1000px) {
+//     color: red;
+//   }
+// }
+// .hoge2 {
+//   @include mq-screen-min(400px) {
+//     color: pink;
+//   }
+// }
+// .hoge3 {
+//   @include mq-screen-max(400px) {
+//     color: blue;
+//   }
+// }

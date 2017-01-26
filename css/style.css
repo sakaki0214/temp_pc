@@ -175,31 +175,28 @@ body[data-os^="Android 5"] {
   background: #e6fdff;
   padding: 10px 15px;
 }
-.page-header .page-header__heading {
+.page-header__heading {
   font-size: 20px;
 }
-@media (max-width: 768px) {
-  .page-header .page-header__heading {
-    font-size: 17px;
-  }
-}
-@media (max-width: 900px) {
-  .page-header {
-    min-width: 0;
-  }
-}
-
 .page-header__inner {
   width: 930px;
   margin: 0 auto;
 }
-@media (max-width: 768px) {
+
+@media (min-width: 768px) and (max-width: 899px) {
+  .page-header {
+    min-width: 0;
+  }
+  .page-header__heading {
+    font-size: 17px;
+  }
+}
+@media (max-width: 767px) {
   .page-header__inner {
     width: auto;
     text-align: center;
   }
 }
-
 .gnav li {
   display: inline-block;
 }
@@ -215,20 +212,21 @@ body[data-os^="Android 5"] {
   display: table;
   clear: both;
 }
-@media (max-width: 768px) {
+
+@media (max-width: 767px) {
   .contents {
     width: auto;
     padding: 1px 0;
   }
 }
-
 .contents__main {
   float: left;
   width: 645px;
   padding: 20px;
   background: rgba(255, 255, 255, 0.2);
 }
-@media (max-width: 900px) {
+
+@media (min-width: 768px) and (max-width: 899px) {
   .contents__main {
     float: none;
     width: 100%;
@@ -238,7 +236,6 @@ body[data-os^="Android 5"] {
     box-sizing: border-box;
   }
 }
-
 .heading-lv1 {
   position: relative;
   margin: 0 0 20px;
@@ -300,7 +297,8 @@ body[data-os^="Android 5"] {
   list-style-type: none;
   padding-left: 0;
 }
-@media (max-width: 900px) {
+
+@media (min-width: 768px) and (max-width: 899px) {
   .contents__side {
     float: none;
     width: 100%;
@@ -309,7 +307,6 @@ body[data-os^="Android 5"] {
     box-sizing: border-box;
   }
 }
-
 .bnr-side li {
   margin: 0 0 10px;
 }
@@ -326,6 +323,11 @@ body[data-os^="Android 5"] {
   background: #bfd0d2;
   color: #000;
 }
+.page-footer__inner {
+  width: 930px;
+  padding: 20px 0;
+  margin: 0 auto;
+}
 .page-footer .cr {
   text-align: center;
 }
@@ -333,24 +335,16 @@ body[data-os^="Android 5"] {
   font-size: 80%;
   color: #999;
 }
-@media (max-width: 900px) {
+
+@media (min-width: 768px) and (max-width: 899px) {
   .page-footer {
     min-width: 0;
   }
-}
-
-.page-footer__inner {
-  width: 930px;
-  padding: 20px 0;
-  margin: 0 auto;
-}
-@media (max-width: 768px) {
   .page-footer__inner {
     width: auto;
     text-align: center;
   }
 }
-
 .footer-nav {
   margin: 0 0 20px;
 }

@@ -5,23 +5,30 @@ $break-medium:900px;
   min-width:960 - 30px;
   background:#e6fdff;
   padding:10px 15px;
-  .page-header__heading {
+  &__heading {
     font-size:20px;
-    @media(max-width:$break-small) {
-      font-size:17px;
-    }
   }
-  @media(max-width:$break-medium) {
-    min-width: 0;
+  &__inner {
+    width:930px;
+    margin:0 auto;
   }
 }
 
-.page-header__inner {
-  width:930px;
-  margin:0 auto;
-  @media(max-width:$break-small) {
-    width:auto;
-    text-align:center;
+@include mq-medium {
+  .page-header {
+    min-width: 0;
+    &__heading {
+      font-size:17px;
+    }
+  }
+}
+
+@include mq-small {
+  .page-header {
+    &__inner {
+      width:auto;
+      text-align:center;
+    }
   }
 }
 
@@ -41,7 +48,10 @@ $break-medium:900px;
     display:table;
     clear:both;
   }
-  @media(max-width:$break-small) {
+}
+
+@include mq-small {
+  .contents {
     width:auto;
     padding:1px 0;
   }
@@ -52,7 +62,9 @@ $break-medium:900px;
   width:645px;
   padding:20px;
   background:rgba(255,255,255, .2);
-  @media(max-width:$break-medium) {
+}
+@include mq-medium {
+  .contents__main {
     float:none;
     width:100%;
     margin:0 0 25px;
@@ -118,12 +130,15 @@ $break-medium:900px;
     list-style-type:none;
     padding-left:0;
   }
-  @media(max-width:$break-medium) {
+}
+@include mq-medium {
+  .contents__side {
     float:none;
     width:100%;
     @include box-sizing(border-box);
   }
 }
+
 .bnr-side {
   li {
     margin:0 0 10px;
@@ -140,6 +155,11 @@ $break-medium:900px;
   padding:1px 15px;
   background:#bfd0d2;
   color:#000;
+  &__inner {
+    width:930px;
+    padding:20px 0;
+    margin:0 auto;
+  }
   .cr {
     text-align:center;
   }
@@ -147,19 +167,17 @@ $break-medium:900px;
     font-size:80%;
     color:#999;
   }
-  @media(max-width:$break-medium) {
+}
+@include mq-medium {
+  .page-footer {
     min-width: 0;
+    &__inner {
+      width:auto;
+      text-align:center;
+    }
   }
 }
-.page-footer__inner {
-  width:930px;
-  padding:20px 0;
-  margin:0 auto;
-  @media(max-width:$break-small) {
-    width:auto;
-    text-align:center;
-  }
-}
+
 .footer-nav {
   margin:0 0 20px;
   li {
